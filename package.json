@@ -1,0 +1,35 @@
+{
+  "name": "ai-support-engine",
+  "version": "1.0.0",
+  "description": "API para comparar clasificación tradicional y generativa de solicitudes de soporte.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "node --test",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "compare": "node scripts/compare.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Perez1129/ai-support-engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Perez1129/ai-support-engine/issues"
+  },
+  "homepage": "https://github.com/Perez1129/ai-support-engine#readme",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "openai": "^7.56.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
