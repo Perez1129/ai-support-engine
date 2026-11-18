@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-11-12T22:56:29.878Z",
+  "source": "not-executed",
+  "status": "not_configured",
+  "model": null,
+  "note": "No se llamó al motor generativo: falta OPENAI_API_KEY. Los valores generativos no son simulados.",
+  "accuracy": {
+    "correct": 0,
+    "evaluatedCases": 0,
+    "totalCases": 12,
+    "accuracyPercent": null
+  },
+  "results": []
+}

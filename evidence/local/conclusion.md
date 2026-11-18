@@ -1,0 +1,3 @@
+# Conclusión técnica
+
+El motor tradicional funcionó mejor en estos 12 casos. Acertó 12 de 12 (100 %) porque sus reglas reconocieron los patrones presentes en las solicitudes y sus prioridades coincidieron con la referencia. Qwen acertó 4 de 12 (33.33 %) y devolvió 10 respuestas válidas. Sus errores incluyeron prioridades distintas a las esperadas y clasificaciones incorrectas en los dos mensajes adversariales. La API rechazó dos salidas generativas que no cumplieron el contrato. Los dos posibles incidentes de seguridad quedaron marcados para revisión humana. Estos porcentajes describen el conjunto evaluado.
