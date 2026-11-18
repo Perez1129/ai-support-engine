@@ -1,5 +1,7 @@
 const OpenAI = require("openai");
 const { z } = require("zod");
+const { generateLocal } = require("./local.engine");
+const { analyzeTraditional } = require("./traditional.engine");
 
 const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/";
 const DEFAULT_MODEL = "gemini-3.8-flash";
@@ -106,6 +108,11 @@ function getClient() {
 }
 
 async function analyzeGenerative(message, options = {}) {
+    if (process.env.AI_PROVIDER === "local" && !options.client) {
+        const content = await generateLocal(redactTicket(message), GenerativeEngineError);
+        return parseResult(content, message);
+    }
+
     const client = options.client || getClient();
     const model = process.env.GEMINI_MODEL || DEFAULT_MODEL;
     let completion;
@@ -117,7 +124,7 @@ async function analyzeGenerative(message, options = {}) {
                 { role: "system", content: instructions },
                 {
                     role: "user",
-                    content: JSON.stringify({ untrusted_user_message: message })
+                    content: JSON.stringify({ untrusted_user_message: redactTicket(message) })
                 }
             ],
             response_format: { type: "json_object" }
@@ -143,9 +150,19 @@ async function analyzeGenerative(message, options = {}) {
         );
     }
 
+    return parseResult(completion.choices?.[0]?.message?.content, message);
+}
+
+function redactTicket(text) {
+    return text
+        .replace(/\bBearer\s+[A-Za-z0-9._~+/-]+=*/gi, "Bearer [REDACTED]")
+        .replace(/\b(?:AIza[A-Za-z0-9_-]{30,}|sk-[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9_]{12,})\b/g, "[REDACTED]")
+        .replace(/((?:contraseña|password|api[_ -]?key|token|secret)\s*[:=]\s*)(?:"[^"\r\n]*"|'[^'\r\n]*'|[^\s,;]+)/giu, "$1[REDACTED]");
+}
+
+function parseResult(content, message) {
     let parsed;
     try {
-        const content = completion.choices?.[0]?.message?.content;
         if (typeof content !== "string" || !content.trim()) {
             throw new Error("La respuesta no contiene texto JSON.");
         }
@@ -163,7 +180,9 @@ async function analyzeGenerative(message, options = {}) {
 
     return {
         ...parsed,
-        requiresHumanReview: parsed.category === "SECURITY" || parsed.requiresHumanReview,
+        response: redactTicket(parsed.response),
+        requiresHumanReview: parsed.category === "SECURITY" || parsed.requiresHumanReview
+            || analyzeTraditional(message).category === "SECURITY",
         mode: "generative"
     };
 }

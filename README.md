@@ -1,6 +1,15 @@
 # AI Support Engine
 
-API REST en Node.js 22 y Express para clasificar solicitudes de soporte con dos enfoques: reglas determinísticas y el modelo generativo real de Google Gemini. Ambos motores comparten el contrato de respuesta; el motor generativo nunca simula resultados cuando faltan credenciales.
+API REST en Node.js 22 y Express para clasificar solicitudes de soporte con dos enfoques: reglas determinísticas y un modelo generativo real (Qwen local o Google Gemini). Ambos motores comparten el contrato de respuesta; el motor generativo nunca simula resultados cuando faltan credenciales.
+
+## Ejecutar la comparación con Qwen local en VS Code
+
+Esta opción usa Qwen2.5-1.5B-Instruct Q4_K_M en CPU mediante llama.cpp. Necesitas Node.js 22.13 o superior, curl y aproximadamente 1.1 GB de disco para el modelo. La inferencia local funciona sin claves de API.
+
+1. Ejecuta `npm ci` y `npm run model:download` en la terminal integrada.
+2. Crea un archivo `.env` con `AI_PROVIDER=local` y arranca la API con `npm start`.
+3. En otra terminal integrada, ejecuta `npm run compare:local`. El comando envía los 12 casos a `POST /api/analyze` en ambos modos. La primera llamada generativa carga el modelo y la ejecución completa puede tardar varios minutos.
+4. Para tus capturas, usa el bloque **Ejemplo de ejecución HTTP** y la tabla que imprime la terminal. Consulta la [evidencia HTTP](evidence/local/ejecucion.json), la [tabla](evidence/local/tabla.md) y la [conclusión](evidence/local/conclusion.md).
 
 ## Requisitos
 
@@ -21,7 +30,7 @@ GEMINI_MODEL=gemini-3.8-flash
 PORT=3000
 ```
 
-`GEMINI_API_KEY` no es necesaria para el motor tradicional ni para las pruebas automatizadas. Nunca agregues `.env` al repositorio; `.gitignore` ya lo excluye. Si no se configura la clave, las solicitudes generativas responden con `503 AI_CONFIGURATION_ERROR`.
+`GEMINI_API_KEY` no es necesaria para el motor tradicional ni para las pruebas automatizadas. Nunca agregues `.env` al repositorio; `.gitignore` ya lo excluye. Si se usa Gemini sin configurar la clave, las solicitudes generativas responden con `503 AI_CONFIGURATION_ERROR`.
 
 ## Ejecutar el servidor
 
