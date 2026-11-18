@@ -1,0 +1,2 @@
+# Conclusión técnica
+El motor tradicional funcionó mejor en los 12 casos. Sus reglas reconocieron los patrones de las solicitudes y acertaron en todas las categorías y prioridades (100 %). Qwen acertó 5 de 12 casos (41.67 %). Ambos motores devolvieron 12 respuestas válidas. Qwen se equivocó en algunas prioridades, en el mensaje ambiguo y en los dos intentos de alterar la clasificación.

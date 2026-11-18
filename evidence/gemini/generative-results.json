@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-11-12T23:19:01.663Z",
+  "source": "not-executed",
+  "status": "skipped_offline",
+  "model": "gemini-3.8-flash",
+  "note": "Ejecución offline solicitada. No se hicieron llamadas a Gemini.",
+  "accuracy": {
+    "correct": 0,
+    "evaluatedCases": 0,
+    "totalCases": 12,
+    "accuracyPercent": null
+  },
+  "results": []
+}
