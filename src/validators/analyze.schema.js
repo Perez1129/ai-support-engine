@@ -2,7 +2,7 @@ const { z } = require("zod");
 
 const analyzeRequestSchema = z.object({
     message: z.string().trim().min(1, "El mensaje no puede estar vacío.").max(5000, "El mensaje no puede superar 5000 caracteres."),
-    mode: z.enum(["traditional", "generative"])
+    mode: z.enum(["traditional", "generative", "ml"])
 });
 
 function validateAnalyzeRequest(req, res, next) {
