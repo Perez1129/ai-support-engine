@@ -107,3 +107,31 @@ La exactitud compara categoría y prioridad con las expectativas predefinidas. `
 ## Conclusión técnica
 
 El motor tradicional es reproducible, auditable y no depende de servicios externos, aunque las reglas pueden dejar fuera variaciones del lenguaje y solicitudes ambiguas. El motor generativo usa Gemini mediante Chat Completions, solicita JSON y valida estrictamente la respuesta antes de devolverla; además, exige revisión humana para incidentes de seguridad. Las pruebas con mocks verifican el contrato y el manejo de errores, pero no miden la calidad real del modelo. La comparación distingue las llamadas reales y solo reporta exactitud si todos los casos se completan; sin llamadas reales completas, informa `N/D` en lugar de fabricar resultados.
+## Clasificador supervisado con TF-IDF
+
+El modo `ml` usa regresión logística para predecir la categoría. La API conserva los cinco campos de respuesta. La prioridad y el mensaje se determinan con reglas. Si el motor de reglas detecta un posible incidente de seguridad, la API exige revisión humana aunque el clasificador no lo etiquete como `SECURITY`.
+
+### Instalar y entrenar
+
+Con Python 3.11 o superior, ejecuta desde la raíz:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r ml/requirements.txt
+python ml/classifier.py train
+npm ci
+npm start
+```
+
+En Windows activa el entorno con `.venv\Scripts\Activate.ps1` en PowerShell. Si el servidor se inicia desde otra terminal, activa primero el entorno o configura `ML_PYTHON` con la ruta a su ejecutable de Python.
+
+El entrenamiento usa los mensajes sintéticos de `ml/tickets.csv`. Imprime precisión, exhaustividad y F1 para la partición de prueba estratificada del 20 %, luego entrena el modelo que usa la API con el conjunto completo. Para usar otro CSV etiquetado con columnas `message,category`, ejecuta `python ml/classifier.py train --csv ruta/tickets.csv`. Los resultados con el CSV de ejemplo ilustran el flujo de entrenamiento.
+
+Envía este cuerpo JSON a `POST /api/analyze`:
+
+```json
+{"message":"Alguien entró a mi cuenta sin autorización","mode":"ml"}
+```
+
+El modo retorna HTTP 503 con `ML_UNAVAILABLE` si Python, sus dependencias o el modelo entrenado no están disponibles. Genera el archivo del modelo con el comando de entrenamiento antes de usarlo.
