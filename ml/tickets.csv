@@ -1,0 +1,122 @@
+message,category
+No logro entrar a mi cuenta desde ayer,ACCESS
+Olvidé mi contraseña y no me llega el correo de recuperación,ACCESS
+El sistema dice que mis credenciales son incorrectas pero estoy seguro de que son las correctas,ACCESS
+Mi usuario aparece bloqueado después de varios intentos,ACCESS
+No puedo ingresar al portal con mi correo institucional,ACCESS
+Necesito restablecer mi password porque ya no recuerdo la actual,ACCESS
+La pantalla de login se queda cargando y nunca me deja pasar,ACCESS
+Me pide un código de verificación que nunca recibo por SMS,ACCESS
+Cambié de número y ya no puedo usar la autenticación en dos pasos,ACCESS
+Mi cuenta fue suspendida y no sé por qué,ACCESS
+No puedo acceder a mi perfil de administrador,ACCESS
+El enlace para recuperar mi contraseña ya expiró,ACCESS
+Tras actualizar mi correo ya no puedo iniciar sesión,ACCESS
+Quiero recuperar el acceso a mi cuenta de estudiante,ACCESS
+Al ingresar mis datos me regresa a la misma página de inicio,ACCESS
+Mi cuenta quedó inhabilitada tras cambiar la clave,ACCESS
+No me deja entrar con mi usuario ni con mi contraseña nueva,ACCESS
+Se me bloqueó el acceso al sistema de nómina,ACCESS
+No puedo autenticarme desde el celular pero en la computadora sí,ACCESS
+Necesito que desbloqueen mi usuario por favor,ACCESS
+El portal rechaza mi contraseña aunque la acabo de cambiar,ACCESS
+Perdí mi dispositivo de autenticación y no puedo entrar,ACCESS
+Mi sesión se cierra sola cada vez que intento entrar,ACCESS
+Dice que mi cuenta no existe pero ya la usaba antes,ACCESS
+No tengo permisos para abrir el módulo de reportes y antes sí podía,ACCESS
+Mi acceso a la plataforma caducó y necesito renovarlo,ACCESS
+No puedo ingresar con mi cuenta de Google al sistema,ACCESS
+Me aparece cuenta bloqueada temporalmente al intentar iniciar,ACCESS
+El correo de confirmación de mi cuenta nunca llegó y no puedo entrar,ACCESS
+Necesito ayuda para volver a entrar a mi usuario,ACCESS
+La aplicación se cierra inesperadamente al abrir la lista de pedidos,BUG
+Aparece un error 404 al abrir la página de facturas,BUG
+El botón de guardar no hace nada cuando lo presiono,BUG
+La página se queda en blanco después de cargar el panel,BUG
+Los totales del reporte no coinciden con los datos reales,BUG
+Al subir una imagen aparece un mensaje de error inesperado,BUG
+La búsqueda no devuelve resultados aunque el registro existe,BUG
+El sistema está muy lento y a veces no responde,BUG
+Se duplican los registros cada vez que envío el formulario,BUG
+El calendario muestra fechas incorrectas,BUG
+Hay una falla al generar el archivo PDF,BUG
+La app falla cuando intento editar un cliente,BUG
+No carga la lista de productos en el catálogo,BUG
+Me sale un error 500 al enviar el formulario de contacto,BUG
+Los filtros del dashboard no funcionan correctamente,BUG
+La pantalla se congela cuando abro el historial,BUG
+El sistema no funciona desde la actualización de anoche,BUG
+Las notificaciones llegan repetidas varias veces,BUG
+El módulo de pagos marca error al confirmar una compra,BUG
+La página de inicio tarda más de un minuto en cargar,BUG
+Se pierde la información que escribo cuando cambio de pestaña,BUG
+El servidor está caído y nadie puede trabajar,BUG
+El botón de descargar genera un archivo vacío,BUG
+Hay un bug en el cálculo de descuentos del carrito,BUG
+La aplicación móvil se traba al abrir la cámara,BUG
+No se actualizan los datos aunque refresque la página,BUG
+El menú lateral desaparece en pantallas pequeñas,BUG
+Aparece un texto raro en lugar de los acentos,BUG
+La exportación se corta a la mitad y marca falla,BUG
+Un problema técnico impide que se carguen mis tickets,BUG
+Me gustaría que el sistema tuviera modo oscuro,FEATURE
+Sería útil poder importar contactos desde un archivo Excel,FEATURE
+Propongo añadir un filtro por rango de fechas en el historial,FEATURE
+Solicito una opción para programar el envío de reportes,FEATURE
+Quisiera poder personalizar los colores del panel,FEATURE
+Sugiero implementar notificaciones por WhatsApp,FEATURE
+Sería bueno agregar un botón para duplicar registros,FEATURE
+Necesitamos una función para exportar a PDF con nuestro logo,FEATURE
+Podrían agregar soporte para varios idiomas,FEATURE
+Me encantaría tener un resumen semanal por correo,FEATURE
+Solicito que se pueda adjuntar más de un archivo por ticket,FEATURE
+Propongo integrar el sistema con Google Calendar,FEATURE
+Sería excelente poder ordenar las tablas por cualquier columna,FEATURE
+Quisiera una opción para compartir reportes con un enlace,FEATURE
+Sugiero crear una aplicación móvil nativa,FEATURE
+Estaría bien contar con atajos de teclado,FEATURE
+Necesitamos un campo adicional para registrar el número de contrato,FEATURE
+Podrían implementar un chat en vivo dentro de la plataforma,FEATURE
+Solicito una función para deshacer cambios recientes,FEATURE
+Me gustaría ver gráficas de barras en el dashboard,FEATURE
+Sería útil que se guardaran mis filtros favoritos,FEATURE
+Propongo agregar roles personalizados para los usuarios,FEATURE
+Quisiera poder imprimir las etiquetas directamente desde el sistema,FEATURE
+Sugiero una opción para archivar tickets antiguos,FEATURE
+Es necesario añadir una opción de pago con transferencia,FEATURE
+Me gustaría que los reportes se pudieran descargar en formato CSV y Excel,FEATURE
+Solicito la posibilidad de etiquetar los tickets por colores,FEATURE
+Propongo mejorar el buscador con sugerencias automáticas,FEATURE
+Podrían crear una plantilla de respuestas rápidas,FEATURE
+Sería práctico poder arrastrar y soltar archivos al subirlos,FEATURE
+Alguien entró a mi cuenta sin que yo lo autorizara,SECURITY
+Recibí un correo sospechoso que pide mis datos bancarios,SECURITY
+Encontré una vulnerabilidad que permite ver datos de otros usuarios,SECURITY
+Creo que mi equipo tiene un virus que roba contraseñas,SECURITY
+Se filtró una base de datos con información de clientes,SECURITY
+Detecté intentos de acceso masivos desde una IP desconocida,SECURITY
+Me llegó un mensaje falso que imita al banco para robar mi clave,SECURITY
+Posible ataque de fuerza bruta contra el portal,SECURITY
+Los datos de los alumnos están expuestos en una URL pública,SECURITY
+Sospecho que hackearon la cuenta de mi jefe,SECURITY
+Un archivo adjunto instaló un malware en mi computadora,SECURITY
+Se puede ejecutar código malicioso en el campo de comentarios,SECURITY
+Alguien está suplantando la identidad de nuestra empresa por correo,SECURITY
+Mis contraseñas aparecen en una lista filtrada en internet,SECURITY
+Hay una falla de seguridad que permite saltarse el inicio de sesión,SECURITY
+Recibimos una nota pidiendo dinero para devolver nuestros archivos cifrados,SECURITY
+Alguien cambió mis datos sin mi permiso y no fui yo,SECURITY
+Un sitio falso copia la página de nuestro sistema para engañar a la gente,SECURITY
+Se descargaron datos confidenciales sin autorización,SECURITY
+Observé movimientos extraños en mi cuenta que yo no hice,SECURITY
+Se puede inyectar código en el buscador para leer la base de datos,SECURITY
+Un desconocido me pidió mi código de verificación haciéndose pasar por soporte,SECURITY
+Detectamos un acceso no autorizado a los servidores de la empresa,SECURITY
+Mi correo envió mensajes de spam que yo no escribí por un posible hackeo,SECURITY
+Es posible ver documentos privados cambiando el número en la dirección,SECURITY
+Creo que alguien intercepta la información que se envía desde el sistema,SECURITY
+Nos atacaron con un ransomware y los archivos están bloqueados,SECURITY
+El sistema muestra contraseñas en texto plano en los registros,SECURITY
+Una persona externa tiene acceso a información interna que no debería,SECURITY
+Me llegó un enlace extraño que pide iniciar sesión en una página falsa,SECURITY
+Ayer hubo un ataque y se robaron los datos de varios usuarios,SECURITY
